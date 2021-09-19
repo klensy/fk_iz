@@ -36,8 +36,8 @@ def decode_char(tree, char):
     # d0 9e -> 'CYRILLIC CAPITAL LETTER O'
     str_code = str(hex(ord(char)))
     #print(str_code)
-    # skip some chars
-    if ord(char) < 0xff:
+    # skip digits
+    if 0x30 >= ord(char) <= 0x39:
         return char
     # find in table
     # <map code="0x41e" name="five"/><!-- CYRILLIC CAPITAL LETTER O -->
